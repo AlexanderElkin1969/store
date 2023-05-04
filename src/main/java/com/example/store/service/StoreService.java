@@ -16,13 +16,13 @@ public class StoreService {
             "005", new Product("005", "product5", 10),
             "006", new Product("006", "product6", 10),
             "007", new Product("007", "product7", 10)
-            ));
+    ));
 
-    public static Map<String, Product> getList(){
+    public static Map<String, Product> getList() {
         return Map.copyOf(store);
     }
 
-    public Product find(String id){
+    public Product find(String id) {
         return store.get(id);
     }
 }
