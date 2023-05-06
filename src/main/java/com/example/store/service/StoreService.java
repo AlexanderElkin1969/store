@@ -8,7 +8,7 @@ import java.util.*;
 @Service
 public class StoreService {
 
-    private static Map<String, Product> store = new HashMap<>(Map.of(
+    private final Map<String, Product> store = new HashMap<>(Map.of(
             "001", new Product("001", "product1", 10),
             "002", new Product("002", "product2", 10),
             "003", new Product("003", "product3", 10),
@@ -18,7 +18,7 @@ public class StoreService {
             "007", new Product("007", "product7", 10)
     ));
 
-    public static Map<String, Product> getList() {
+    public Map<String, Product> getList() {
         return Map.copyOf(store);
     }
 
