@@ -12,7 +12,7 @@ import java.util.List;
 public class BasketService {
 
     @Autowired
-    Basket basket;
+    private Basket basket;
 
     private final StoreService storeService;
 

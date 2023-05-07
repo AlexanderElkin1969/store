@@ -4,6 +4,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.web.context.annotation.SessionScope;
 
 import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,6 +16,11 @@ public class Basket {
         System.out.println("Корзина создана.");
     }
 
+    @PreDestroy
+    public void destroy(){
+        System.out.println("Корзина удалена.");
+    }
+
     private final List<Product> basketList = new ArrayList<>();
 
     public void add(Product product) {
@@ -24,7 +30,6 @@ public class Basket {
     public List<Product> getBasketList() {
         return List.copyOf(basketList);
     }
-
 
 }
 
